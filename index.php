@@ -10,6 +10,25 @@ $query = new WP_Query(array(
                     ),
 ));
 
+/* by month
+  'date_query' => array(
+                        array(
+                            'column' => 'post_date_gmt',
+                            'after' => '1 month ago',
+                        ),
+                    ),
+*/
+
+/* by year
+   'date_query' => array(
+                        array(
+                            'column' => 'post_date_gmt',
+                            'after' => '1 year ago',
+                        ),
+                    ),
+
+*/
+
    if ($query->have_posts()) {
    while ($query->have_posts()){    
     $query->the_post();  
