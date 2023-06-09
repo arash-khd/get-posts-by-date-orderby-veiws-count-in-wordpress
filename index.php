@@ -2,12 +2,12 @@
 $query = new WP_Query(array(
  "meta_key" => "veiws",
  "orderby" => "meta_value_num",
-  "date_query" =>array(
-    array(
-        "year" => date("Y"),
-         "week" => date("W")
-    ),
-  ),
+ 'date_query' => array(
+                        array(
+                            'column' => 'post_date_gmt',
+                            'after' => '1 week ago',
+                        ),
+                    ),
 ));
 
    if ($query->have_posts()) {
